@@ -1,6 +1,5 @@
-sim[adl_,np_]:=(
+sim[adl_,np_]:=Block[{tut=adl,ini},
 If[adl===0,Return[0]];
-tut=adl;
 ini=Hash[Map[tut[[#,1]]&,Range[Length[tut]]]];
 Return[Reap[Do[metti[o,Random[Integer,{1,Length[tut]}]];,{o,1,np}]][[2,1]]]
 );
