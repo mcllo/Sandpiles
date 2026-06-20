@@ -2,7 +2,7 @@ sim[adl_,np_]:=Block[{tut=adl,ini},
 If[adl===0,Return[0]];
 ini=Hash[Map[tut[[#,1]]&,Range[Length[tut]]]];
 Return[Reap[Do[metti[o,Random[Integer,{1,Length[tut]}]];,{o,1,np}]][[2,1]]]
-);
+];
 
 metti[o_,p_]:=(
 tut[[p,3]]++;
@@ -178,6 +178,8 @@ AppendTo[ad[[uno,1]],altro];
 ad[[uno,2]]++;
 ad[[uno,4]]++;
 AppendTo[ad[[altro,1]],uno];
+ad[[altro,2]]++;
+ad[[altro,4]]++;
 Return[ad]
 ];
 
